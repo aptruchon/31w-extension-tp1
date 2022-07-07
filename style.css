@@ -1,3 +1,11 @@
+/* 
+Plugin Name: Plugin exer3 - Alex P. Truchon 
+Author: Alex Poulin Truchon
+Author URI: https://github.com/aptruchon
+Link URI: https://eddym83.sg-host.com/582-3w3-creation-de-sites-web-dynamiques-90h/
+Description: Plugin de l'exercice 3
+Version: 1.0.0
+*/
 .carrousel {
   position: absolute;
   width: 100vw;
@@ -23,7 +31,7 @@
 
 .carrousel__ouvrir {
   opacity: 1;
-  transform: scale(1);
+  transform: scale(0.8);
 }
 
 .carrousel__figure {
@@ -39,7 +47,7 @@
   width: 100%;
   height: 100%;
   opacity: 0;
-  transition: all 1s;
+  transition: all 0.2s;
 }
 
 .carrousel__figure__img--activer {

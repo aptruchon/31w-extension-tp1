@@ -2,14 +2,14 @@
 /**
  * Plugin name: Carrousel
  * Description: Carrousel d'images créé à partir d'une galerie d'images
- * Author: Eddy Martin
- * Plugin URI: https://github.com/eddytuto
+ * Author: Alex Poulin Truchon
+ * Plugin URI: https://github.com/aptruchon
  */
 function carrousel_31w_enqueue()
 {
     $version_css = filemtime(plugin_dir_path(__FILE__) . "style.css");
     $version_js = filemtime(plugin_dir_path(__FILE__) . "script/carrousel.js");
-    //var_dump(__FILE__); die()
+   
     wp_enqueue_style(   'carrousel_31w_css', 
                         plugin_dir_url( __FILE__)  . "style.css",
                         array(),

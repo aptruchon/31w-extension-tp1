@@ -1,7 +1,7 @@
 /**
  * Fonction IIFE qui permet de contrôler l'affichage du carrousel
- * Auteur : Eddy Martin
- * Date de dernière modification : 6 juillet 2022
+ * Auteur : Alex Poulin Truchon
+ * Date de dernière modification : 7 juillet 2022
  * 
  */
 
@@ -32,7 +32,6 @@
             // Selection du bon radio button au moment de cliquer sur la première image
             for(let i = 0, l = elmCarrousel__radio.length; i < l; i++){
                 if(elmCarrousel__radio[i].dataset.index == index){
-                    console.log(elmCarrousel__radio[i]);
                     elmCarrousel__radio[i].setAttribute("checked", "true");
                 }
             }
