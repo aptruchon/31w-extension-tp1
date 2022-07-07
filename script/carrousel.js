@@ -16,6 +16,9 @@
     let elmCarrousel__radio = document.querySelector('.carrousel__radio')
     console.log(elmGalerieImg[0].getAttribute('src'))
     let index = 0 // L'index qui permettra d'indexer les images du carrousel et les radios bouton
+    let ancienIndex = -1;
+
+    //Boucle pour parcourir tous les éléments de la galerie
     for (const img of elmGalerieImg){
         ajouter_elmImg(img)
         ajouter_elmRadio()
