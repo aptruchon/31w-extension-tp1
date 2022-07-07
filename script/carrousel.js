@@ -18,7 +18,7 @@
     let index = 0 // L'index qui permettra d'indexer les images du carrousel et les radios bouton
     let ancien_index = -1
     let compteur =0
-    
+
     for (const img of elmGalerieImg){
         img.dataset.index = compteur++
         ajouter_elmImg(img)
@@ -28,7 +28,15 @@
             elmCarrousel.classList.add('carrousel__ouvrir') 
             index = this.dataset.index
             affiche_carrousel_img()
-    }) 
+
+            // Selection du bon radio button au moment de cliquer sur la première image
+            for(let i = 0, l = elmCarrousel__radio.length; i < l; i++){
+                if(elmCarrousel__radio[i].dataset.index == index){
+                    console.log(elmCarrousel__radio[i]);
+                    elmCarrousel__radio[i].setAttribute("checked", "true");
+                }
+            }
+    })
     }
 /**
  * Écouteur pour fermer le carrousel
@@ -59,30 +67,25 @@
  * */
 
     function ajouter_elmRadio(){
-        let elmRadio = document.createElement('input')
-        elmRadio.setAttribute('type','radio')
-        elmRadio.setAttribute('name','radImg')
-        elmRadio.dataset.index = index
-        index = index+1
-        elmCarrousel__radio.appendChild(elmRadio)
+        let elmRadio = document.createElement('input');
+        elmRadio.setAttribute('type','radio');
+        elmRadio.setAttribute('name','radImg');
+        elmRadio.dataset.index = index;
+        index = index + 1;
+        elmCarrousel__radio.appendChild(elmRadio);
         /* Écouteur pour sélectionner une nouvelle image */ 
         elmRadio.addEventListener('mousedown', function(){    
-            index = this.dataset.index
-            affiche_carrousel_img()
+            index = this.dataset.index;
+            affiche_carrousel_img();
         })
     }
 
 function affiche_carrousel_img()
 {
     if (ancien_index != -1){
-        elmCarrousel__figure.children[ancien_index].classList.remove('carrousel__figure__img--activer') 
+        elmCarrousel__figure.children[ancien_index].classList.remove('carrousel__figure__img--activer');
     }
-    elmCarrousel__figure.children[index].classList.add('carrousel__figure__img--activer')
-    ancien_index = index
+    elmCarrousel__figure.children[index].classList.add('carrousel__figure__img--activer');
+    ancien_index = index;
 }
-    
-  
-
-
-
 })()
